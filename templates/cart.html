@@ -1,0 +1,52 @@
+<md-dialog  aria-label="Cart" ng-controller="storeCtrl" style="width: 50%;">
+
+    <md-toolbar >
+        <div class="md-toolbar-tools primary-color-dark" >
+            <h2 style="color: white">Cart</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon aria-label="Close dialog">X</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content >
+
+
+        <div   class="md-dialog-content"   >
+            <table style="width:100%;" class="table-striped" >
+               <tr >
+                <th>IMG</th>
+                <th style="padding-left: 10px;padding-right: 10px">Name</th>
+                <th colspan="2" style="padding-left: 10px;text-align: center;">Quantity</th>
+
+                <th>SubTotal</th>
+                   <th> </th>
+               </tr>
+
+            <tr class="border-bottom" ng-repeat="item in cart">
+            <td><img src="{{item.img}}" style="width: 100px;height: 100px;" alt=""></td>
+            <td style="padding-left: 10px;padding-right: 10px">{{item.name}}</td>
+            <td style="padding-left: 30px;">
+                x{{item.qty}}
+            </td>
+            <td style="padding-right: 40px;">
+                       <button style="width: 25px;height: 25px;border: none;color: #0d47a1" ng-click="item.qty=item.qty+1">+</button>
+                <br>
+                      <button style="width: 25px;height: 25px; border: none;color: #811b1b;font-weight: bold;" ng-click="qty(item)">-</button>
+
+            </td>
+            <td ng-model="tot">{{item.qty*item.price|currency}}</td>
+                <td><button   ng-click="removeItem(item)" class="danger"><span class="fa fa-minus-circle"></span></button></td>
+            </tr>
+            </table>
+            <h4 style="display: inline;padding-left: 20px;">Total Cost:</h4><h6 style="padding-left: 305px;display: inline">{{cart | totalSumPriceQty:'qty':'price'|currency}}</h6>
+
+            <a style="width: 50%;margin-left: 25%;"  class=" btn btn-success btn-block f" ng-click="">Buy</a>
+        </div>
+
+
+    </md-dialog-content>
+
+
+</md-dialog>

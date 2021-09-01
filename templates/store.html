@@ -1,0 +1,409 @@
+<div class="row" style="margin-top: 30px;" ng-controller="storeCtrl">
+    <div  class="col-lg-1 push-lg-1 col-md-3 col-xs-12"><nav id="myNav" >
+        <ul style="display:block;" class="nav nav-pills nav-stacked" ng-init="selectedTab='phones'" id="tabs">
+            <li class="{{selectedTab=='phones'?'active':''}}"><a href=""  ng-click="selectedTab='phones'" >Phones</a></li>
+            <li class="{{selectedTab=='laptops'?'active':''}}"><a href="" ng-click="selectedTab='laptops'">Laptops</a></li>
+            <li class="{{selectedTab=='screens'?'active':''}}"><a href="" ng-click="selectedTab='screens'">Screens</a></li>
+        </ul>
+
+    </nav></div>
+
+    <div ng-switch="selectedTab" class="col-lg-10 col-md-8 col-xs-12">
+        <div class="a" ng-switch-when="phones"  >
+            <div  ><nav >
+                <ul  class="nav nav-pills pill " ng-init="selectedTab='all'" >
+                    <li class="{{selectedTab=='all'?'active':''}} "><a href=""  ng-click="selectedTab='all'" >All</a></li>
+                    <li class="{{selectedTab=='Huawei'?'active':''}} "><a href=""  ng-click="selectedTab='Huawei'" >Huawei</a></li>
+                    <li class="{{selectedTab=='Iphone'?'active':''}}"><a href="" ng-click="selectedTab='Iphone'">Iphone</a></li>
+                    <li class="{{selectedTab=='Samsung'?'active':''}}"><a href="" ng-click="selectedTab='Samsung'">Samsung</a></li>
+                </ul>
+
+            </nav></div>
+
+            <div ng-switch="selectedTab" >
+                <div class="b row" ng-switch-when="all" >
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="phone in phones" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{phone.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{phone.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{phone.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+
+                                <a ng-click="open(phone,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="b row" ng-switch-when="Huawei" >
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="phone in phones|filter:{company:'Huawei'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{phone.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{phone.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{phone.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+
+                                <a ng-click="open(phone,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                    </div>
+
+
+                <div class="b row" ng-switch-when="Iphone">
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="phone in phones|filter:{company:'Iphone'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{phone.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{phone.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{phone.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(phone,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                    </div>
+
+
+                <div class="b row" ng-switch-when="Samsung">
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="phone in phones|filter:{company:'Samsung'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                            <img class="card-img-top" src="{{phone.img}}"
+                                 alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{phone.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{phone.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+
+                            <a ng-click="open(phone,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+</div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="a" ng-switch-when="laptops">
+            <div ><nav>
+                <ul  class="nav nav-pills pill" ng-init="selectedTab='all'" >
+                    <li class="{{selectedTab=='all'?'active':''}}"><a href=""  ng-click="selectedTab='all'" >All</a></li>
+                    <li class="{{selectedTab=='Toshiba'?'active':''}}"><a href=""  ng-click="selectedTab='Toshiba'" >Toshiba</a></li>
+                    <li class="{{selectedTab=='HP'?'active':''}}"><a href="" ng-click="selectedTab='HP'">HP</a></li>
+                    <li class="{{selectedTab=='Acer'?'active':''}}"><a href="" ng-click="selectedTab='Acer'">Acer</a></li>
+                </ul>
+
+            </nav></div>
+
+            <div ng-switch="selectedTab" >
+                <div class="b row" ng-switch-when="all" >
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="laptop in laptops" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{laptop.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{laptop.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{laptop.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(laptop,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="Toshiba" >
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="laptop in laptops|filter:{company:'Toshiba'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{laptop.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{laptop.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{laptop.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(laptop,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="HP">
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="laptop in laptops|filter:{company:'HP'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{laptop.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{laptop.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{laptop.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(laptop,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="Acer">
+                    <div class="card  col-lg-3 col-md-6" ng-repeat="laptop in laptops|filter:{company:'Acer'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{laptop.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{laptop.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{laptop.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(laptop,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="a" ng-switch-when="screens">
+
+            <div ><nav>
+                <ul  class="nav nav-pills pill" ng-init="selectedTab='all'" >
+                    <li class="{{selectedTab=='all'?'active':''}}"><a href=""  ng-click="selectedTab='LG'" >All</a></li>
+                    <li class="{{selectedTab=='LG'?'active':''}}"><a href=""  ng-click="selectedTab='LG'" >LG</a></li>
+                    <li class="{{selectedTab=='Danasat'?'active':''}}"><a href="" ng-click="selectedTab='Danasat'">Danasat</a></li>
+                    <li class="{{selectedTab=='Sony'?'active':''}}"><a href="" ng-click="selectedTab='Sony'">Sony</a></li>
+                </ul>
+
+            </nav></div>
+
+            <div ng-switch="selectedTab" >
+                <div class="b row" ng-switch-when="all" >
+                    <div class="card  col-lg-4 col-md-6" ng-repeat="screen in screens" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{screen.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{screen.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <div style="margin: auto;" class="card-text  note  note-success ">{{screen.price|currency}}
+                                <h5 style="color: red;text-decoration:line-through;display: inline" class="text-center">
+                                    <p style="color: black;!important;display: inline;margin-left: 25px;">{{screen.dis|currency}}</p>
+                                </h5> </div>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(screen,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="LG" >
+                    <div class="card  col-lg-4 col-md-6" ng-repeat="screen in screens|filter:{company:'LG'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{screen.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{screen.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <div style="margin: auto;" class="card-text  note  note-success ">{{screen.price|currency}}
+                                <h5 style="color: red;text-decoration:line-through;display: inline" class="text-center">
+                                    <p style="color: black;!important;display: inline;margin-left: 25px;">{{screen.dis|currency}}</p>
+                                </h5> </div>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(screen,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="Danasat">
+                    <div class="card  col-lg-4 col-md-6" ng-repeat="screen in screens|filter:{company:'Danasat'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{screen.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{screen.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{screen.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(screen,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="b row" ng-switch-when="Sony">
+                    <div class="card  col-lg-4 col-md-6" ng-repeat="screen in screens|filter:{company:'Sony'}" >
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <a>
+                                <img class="card-img-top" src="{{screen.img}}"
+                                     alt="Card image cap">
+                            </a>
+                        </div>
+                        <h4 style="margin: auto;" class="card-title">{{screen.name}}</h4>
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            <!-- Title -->
+
+                            <!-- Text -->
+                            <p style="margin: auto;" class="card-text  note  note-success ">{{screen.price|currency}}</p>
+                            <!-- Button -->
+                            <div class="button">
+                                <a ng-click="open(screen,$event)" class="btn blue-gradient"><i class="fas fa-cart-plus fa-lg amber-text"></i></a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<md-dialog style="width: 50%;height: 70%;", aria-label="Mango (Fruit)">
+
+        <md-toolbar ng-controller="storeCtrl">
+            <div style="background-color: #3247a5;" class="md-toolbar-tools">
+                <h2 style="color: white;">Buying {{product.name}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel(addr,qty)">
+                    <md-icon  aria-label="Close dialog">X</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content >
+            <div class=" md-dialog-content">
+                <div class="row">
+                <div class="col-4 uk-position-relative" uk-slideshow="animation: slide" >
+
+
+                        <ul class="uk-slideshow-items" style="width: 150px;height: 150px;">
+                            <li>
+                                <img style="width: 150px;height: 150px;" src="{{product.img}}" alt=""   class="uk-animation uk-transform-origin-top" >
+                            </li>
+                            <li>
+                                <img style="width: 150px;height: 150px;" src="{{product.img}}" alt=""   class="uk-animation uk-transform-origin-top" >
+                            </li>
+                            <li>
+                                <img style="width: 150px;height: 150px;" src="{{product.img}}" alt=""   class="uk-animation uk-transform-origin-top" >
+                            </li>
+                        </ul>
+
+                        <div class="uk-animation-toggle">
+
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0"><a href="#"><img  src="{{product.img}}" width="50" alt=""></a></li>
+                                <li uk-slideshow-item="1"><a href="#"><img src="{{product.img}}" width="50" alt=""></a></li>
+                                <li uk-slideshow-item="2"><a href="#"><img src="{{product.img}}" width="50" alt=""></a></li>
+                            </ul>
+</div>
+
+
+                </div>
+                <div style="text-align: center;margin-bottom: 30px;" class="col-lg-7  form-group">
+                    <h3>Enter Quantity</h3>
+
+                    <div ng-show="alert" class="md-form mb-0">
+                        <div  class="uk-alert uk-alert-danger" style=" text-align: center">Invalid Quantity</div>
+
+
+                    </div>
+                    <div class="md-form mb-0" readonly style="margin-top: 15px;">
+                    <input ng-init="product.qty=1" type="number" id="qty" name="qty" class="form-control" min="1" minlength="1" value="1" ng-model="product.qty">
+                    <label for="qty" class="">Quantity</label>
+                        <label class="badge badge-success">{{product.price*product.qty|currency}}</label>
+                   </div>
+
+                </div>
+
+            </div>
+
+                <div style="width: 50%; bottom: 15px;!important;">
+                    <button ng-show="show" style="width: 50%;margin-left: 25%;position: absolute;bottom: 15px;"  class="btn btn-primary btn-block f" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+                        <span class="visually-hidden">Adding to cart...</span>
+                    </button>
+                    <button ng-hide="show" style="width: 50%;margin-left: 25%;position: absolute;bottom: 15px;" class=" btn btn-success btn-block f" ng-click="buy(product)">Buy</button>
+                </div>
+            </div>
+        </md-dialog-content>
+
+
+</md-dialog>
