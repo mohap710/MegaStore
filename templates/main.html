@@ -1,26 +1,28 @@
 
 
 <nav  id="nav" ng-controller="storeCtrl" class="fixed-top navbar navbar-expand-lg nav blue-gradient" ng-init="selectedTab='home'">
-    <a  ng-click="selectedTab='home'" style="font-weight: bold" class="navbar-brand" href="#">Mega Store</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color: white;margin-right: 35px;">≡</span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav navbar-nav" >
-            <li class="padding nav-item {{selectedTab=='home'?'active':''}}">
-                <a ng-click="selectedTab='home'" class="nav-link" ui-sref="main.home" >Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="padding nav-item {{selectedTab=='store'?'active':''}}">
-                <a ng-click="selectedTab='store'" class="nav-link" ui-sref="main.store">store</a>
-            </li>
-            <li class="padding nav-item {{selectedTab=='contact'?'active':''}}">
-                <a ng-click="selectedTab='contact'" class="nav-link" ui-sref="main.contact">Contact Us</a>
-            </li>
-        </ul>
-<ul style="right:25px;bottom:0;position:absolute;color: white;font-size: large">
-        <a id="cart"  class="nav-item fas fa-shopping-cart " ng-click="openCart($event,$scope.CartProduct)"></a><i style="margin-left: 5px;" class="badge badge-danger ">{{cart.length}}</i>
-</ul>
+    <div class="container">
+        <a  ng-click="selectedTab='home'" style="font-weight: bold" class="navbar-brand" href="#">Mega Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white;">≡</span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-between ml-5" id="navbarNav">
+            <ul class="nav navbar-nav" >
+                <li class="padding nav-item {{selectedTab=='home'?'active':''}}">
+                    <a ng-click="selectedTab='home'" class="nav-link" ui-sref="main.home" >Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="padding nav-item {{selectedTab=='store'?'active':''}}">
+                    <a ng-click="selectedTab='store'" class="nav-link" ui-sref="main.store">store</a>
+                </li>
+                <li class="padding nav-item {{selectedTab=='contact'?'active':''}}">
+                    <a ng-click="selectedTab='contact'" class="nav-link" ui-sref="main.contact">Contact Us</a>
+                </li>
+            </ul>
+            <ul style="color: white;margin:0 !important;">
+                    <a id="cart"  class="nav-item fas fa-shopping-cart " ng-click="openCart($event,$scope.CartProduct)"></a><i class="badge badge-danger ">{{cart.length}}</i>
+            </ul>
+        </div>
     </div>
 </nav>
 

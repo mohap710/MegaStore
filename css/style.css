@@ -1,283 +1,324 @@
-body{font-family: monospace;}
+body {
+  font-family: "poppins";
+  background: #f1f4fd;
+  overflow-x: hidden;
+}
+
 .fix-to-top {
-    position: fixed;
-    top: 0;
-}
-/*3D Carousel*/
-#cube {
-    position: relative;
-    margin: 0 auto;
-    height: 450px;
-    width: 450px;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: all 1s ease-in-out;
-    transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
+  position: fixed;
+  top: 0;
 }
 
-.face {
-    position: absolute;
-    height: 450px;
-    width: 450px;
-    padding: 50px;
-    background-color: white;
-
-
+.transparent {
+  background-color: transparent !important;
 }
 
-#cube .one {
-    -webkit-transform: rotateX(90deg) translateZ(200px);
-    transform: rotateX(90deg) translateZ(200px);
+/* 3D Carousel virsion one Start */
+div#carousel {
+  perspective: 800px;
+  font-size: 0;
+  margin: 4rem 0 6rem;
+}
+figure#spinner {
+  transform-style: preserve-3d;
+  height: 300px;
+  transform-origin: 50% 50% -365px;
+  transition: 1s;
+}
+figure#spinner span {
+  background: #fff;
+  padding: 2rem;
+  width: 425px;
+  position: absolute;
+  left: 30%;
+  transform-origin: 50% 50% -365px;
+  outline: 1px solid transparent;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure#spinner img {
+  width: 300px !important;
+  height: 250px !important;
+}
+figure#spinner span:nth-child(1) {
+  transform: rotateY(0deg);
+}
+figure#spinner span:nth-child(2) {
+  transform: rotateY(-60deg);
+}
+figure#spinner span:nth-child(3) {
+  transform: rotateY(-120deg);
+}
+figure#spinner span:nth-child(4) {
+  transform: rotateY(-180deg);
+}
+figure#spinner span:nth-child(5) {
+  transform: rotateY(-240deg);
+}
+figure#spinner span:nth-child(6) {
+  transform: rotateY(-300deg);
+}
+div#carousel ~ span {
+  color: #fff;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -6rem;
+  border-bottom: none;
+  line-height: 0;
+}
+div#carousel ~ span:hover {
+  color: #888;
+  cursor: pointer;
+}
+/* 3D Carousel visrion one End */
+
+.grey {
+  background-color: #eeeeee;
+  box-shadow: #080808 5px 2px 9px 0px;
+}
+.pb-5,
+.py-5 {
+  padding-bottom: 0rem !important;
+}
+.pt-5,
+.py-5 {
+  padding-top: 2rem !important;
+}
+nav > button {
+  background-color: white;
+}
+.primary-color,
+ul.stepper li.active a .circle,
+ul.stepper li.completed a .circle {
+  background-color: #00838f !important;
+}
+.navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-#cube .two {
-    -webkit-transform: translateZ(200px);
-    transform: translateZ(200px);
+nav li {
+  padding: 0.5em !important;
 }
 
-#cube .three {
-    -webkit-transform: rotateY(90deg) translateZ(200px);
-    transform: rotateY(90deg) translateZ(200px);
+li > a.nav-link {
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  padding: 0 0.5em;
 }
-
-#cube .four {
-    -webkit-transform: rotateY(180deg) translateZ(200px);
-    transform: rotateY(180deg) translateZ(200px);
+.padding {
+  padding-right: 10px;
 }
-
-#cube .five {
-    -webkit-transform: rotateY(-90deg) translateZ(200px);
-    transform: rotateY(-90deg) translateZ(200px);
+a.btn-primary {
+  margin-left: 30%;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  font-weight: bold;
 }
-
-#cube .six {
-    -webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
-    transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
-}
-/*End*/
-.grey{background-color: #eeeeee;
-box-shadow: #080808 5px 2px 9px 0px;
-}
-.pb-5, .py-5 {
-    padding-bottom: 0rem!important;
-}
-.pt-5, .py-5 {
-    padding-top: 2rem!important;
-}
-nav>button{background-color: white;}
-.primary-color, ul.stepper li.active a .circle, ul.stepper li.completed a .circle {
-
-    background-color: #00838f !important;}
-.navbar-brand{
-    color: white;font-weight: bold;}
-li>a.nav-link{
-    font-size: large;
-    font-weight: bold;
-    color: white;
-    padding-right: 60px;!important;
-}
-.padding{
-    padding-right: 10px;
-}
-a.btn-primary{
-    margin-left: 30%;
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: center;
-    font-weight: bold;
-}
-#carouselFade{
-    width: 100%;!important;
-    height: 450px;
+#carouselFade {
+  width: 100% !important;
+  height: 450px;
   margin-bottom: 10px;
-    background-color: white;
+  background-color: white;
 }
-.w-100{width: 70%!important;
-margin: auto;!important;
+.w-100 {
+  width: 70% !important;
+  margin: auto !important;
 }
-.pic{height: 500px;!important;
+.pic {
+  height: 500px !important;
 }
-ul.uk-thumbnav{
-    margin-top: 10px;
+ul.uk-thumbnav {
+  margin-top: 10px;
 }
-.card-title{
-    font-weight: 600;
+.card-title {
+  font-weight: 600;
 }
-.card{
+.card {
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: #3146a33b -3px 0px 4px 0px;
+}
+div.button {
+  margin-left: 25% !important;
+}
+.title {
+  width: fit-content;
+  padding: 10px;
+  text-align: center;
+  color: #3147a4;
+  margin: auto;
+  box-shadow: #0000008f -3px 3px 7px;
+  border-radius: 10px;
+}
+.border-bottom {
+  width: 100% !important;
+}
+section {
+  width: 80%;
+  margin-left: 10%;
+}
+.card-img-top {
+  border-radius: 15px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+.card-img-top:hover {
+  transform: scale3d(1.1, 1, 1);
+  transition: ease-in-out 0.5s;
+}
 
-    width: 100%;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: #3146a33b -3px 0px 4px 0px;
+ul.navbar-nav > li.active {
+  text-align: center;
+  text-shadow: #3354ad -1px 5px 7px;
 }
-div.button{margin-left: 25%;!important;
+ul.navbar-nav > li.active > a {
+  font-size: 1.1;
+  transform: rotate3d(1, 1, 1, 360deg);
+  transition: ease-in-out 0.5s;
+  padding: 1px;
 }
-.title{
-    width:fit-content;
-    padding:10px;
-    text-align:center;
-    color:#3147a4;
-    margin: auto;
-    box-shadow: #0000008f -3px 3px 7px;
-    border-radius: 10px;
-}
-.border-bottom{
-    width: 100%;!important;
-}
-section{
-    width: 80%;
-    margin-left: 10%;
-}
-.card-img-top{
-    border-radius: 15px;
-    width: 200px;height: 200px;
-    margin: auto;
-}
-.card-img-top:hover{
-    transform: scale3d(1.1,1,1);
-    transition: ease-in-out 0.5s;
-}
+ul.nav-stacked > li.active {
+  transition: ease-in-out;
+  transform: scale3d(1.2, 1.2, 1);
 
-ul.navbar-nav>li.active{
-text-align: center;
-    text-shadow: #3354ad -1px 5px 7px;
+  text-shadow: grey -2px 5px 5px;
+  padding-left: 10px;
 }
-ul.navbar-nav>li.active>a{
-    /*transform: scale3d(1.1,1.1,1);*/
-    font-size: larger;
-    transform: rotate3d(1,1,1,360deg);
-    transition: ease-in-out 0.5s;
-    padding: 1px;
+ul.nav-stacked > li > a {
+  font-size: 20px;
+  color: #34495e;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
-ul.nav-stacked>li.active{
-    transition: ease-in-out;
-    transform: scale3d(1.2,1.2,1);
-
-    text-shadow: grey -2px 5px 5px;
-    padding-left: 10px;
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  font-weight: bolder;
+  color: black;
 }
-ul.nav-stacked>li>a{
-    font-size: 20px;
-    color: #34495e;
-    margin-top: 25px;
-    margin-bottom: 10px;
+ul.pill > li > a {
+  text-align: justify-all;
+  font-size: 18px;
+  color: #34495e;
+  padding: 0px 15px;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-    font-weight: bolder;
-    color: black;
-
+.pill > li.active > a,
+.pill > li.active > a:focus,
+.pill > li.active > a:hover {
+  font-weight: bolder;
+  border-radius: 3px;
+  color: white;
+  background-color: #34495e;
+  font-size: x-large;
+  transform: scale3d(1.5, 1.5, 1);
+  transition: ease-in-out 0.5s;
+  padding: 1px;
+  text-transform: uppercase;
+  box-shadow: grey 7px -7px 6px;
 }
-ul.pill>li>a{
-text-align: justify-all;
-    font-size: 18px;
-    color: #34495e;
-    padding: 0px 15px;
-
+th > th {
+  width: 50px;
 }
-.pill>li.active>a, .pill>li.active>a:focus, .pill>li.active>a:hover{
-    font-weight: bolder;
-    border-radius: 3px;
-    color: white;
-    background-color:#34495e;
-    font-size: x-large;
-    transform: scale3d(1.5,1.5,1);
-    transition: ease-in-out 0.5s;
-    padding: 1px;
-    text-transform: uppercase;
-    box-shadow:grey 7px -7px 6px;
-
+tr > td {
+  width: 50px;
 }
-th>th{width: 50px;}
-tr>td{width: 50px;}
 
 .danger {
-    border-color: red;
-    color: red
+  border-color: red;
+  color: red;
 }
 
 .danger:hover {
-    background: red;
-    color: white;
+  background: red;
+  color: white;
 }
 /*NG-animate Start*/
 
-.a{
-    position: absolute;
-    width: 100%;
-
+.a {
+  position: absolute;
+  width: 100%;
 }
-.a.ng-enter{
-    opacity: 0;
-    transform: translateY(-50%) rotateY(180deg);
-    box-shadow: 0px 0px 3px;
-    transition: all 1s;
+.a.ng-enter {
+  opacity: 0;
+  transform: translateY(-50%) rotateY(180deg);
+  box-shadow: 0px 0px 3px;
+  transition: all 1s;
 }
-.a.ng-enter-active{
-    opacity: 1;
-    transform: translateY(0%) rotateY(0deg);
-    box-shadow: 0px 0px;
-
+.a.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0%) rotateY(0deg);
+  box-shadow: 0px 0px;
 }
-.a.ng-leave{
-    opacity: 1;
-    transform: translateY(0%) rotateY(0deg);
-    box-shadow: 0px 0px 3px;
-    transition: all 1s;
+.a.ng-leave {
+  opacity: 1;
+  transform: translateY(0%) rotateY(0deg);
+  box-shadow: 0px 0px 3px;
+  transition: all 1s;
 }
-.a.ng-leave-active{
-    transform: translateY(50%) rotateY(-180deg);
-    box-shadow: 0px 0px;
-    opacity: 0;
+.a.ng-leave-active {
+  transform: translateY(50%) rotateY(-180deg);
+  box-shadow: 0px 0px;
+  opacity: 0;
 }
 
-.b{
-    position: absolute;
-    width: 100%;
+.b {
+  position: absolute;
+  width: 100%;
 }
-.b.ng-enter{
-    opacity: 0;
-    transition: all 0.5s;
+.b.ng-enter {
+  opacity: 0;
+  transition: all 0.5s;
 }
-.b.ng-enter-active{
-    opacity: 1;
+.b.ng-enter-active {
+  opacity: 1;
 }
-.b.ng-leave{
-    opacity: 1;
-    transition: all 0.5s;
+.b.ng-leave {
+  opacity: 1;
+  transition: all 0.5s;
 }
-.b.ng-leave-active{
-    opacity: 0;
+.b.ng-leave-active {
+  opacity: 0;
 }
 
-.c{
-    position: absolute;
-    width: 100%;
-
+.c {
+  position: absolute;
+  width: 100%;
 }
-.c.ng-enter{
-
-    opacity: 0;
-    transform: translateY(-50%) rotateX(90deg);
-    box-shadow: 0px 0px 3px;
-    transition: all 1s;
+.c.ng-enter {
+  opacity: 0;
+  transform: translateY(-50%) rotateX(90deg);
+  box-shadow: 0px 0px 3px;
+  transition: all 1s;
 }
-.c.ng-enter-active{
-    opacity: 1;
-    transform: translateY(0%) rotateX(0deg);
-    box-shadow: 0px 0px;
-
+.c.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0%) rotateX(0deg);
+  box-shadow: 0px 0px;
 }
-.c.ng-leave{
-    opacity: 1;
-    transform: translateY(0%) rotateX(0deg);
-    box-shadow: 0px 0px 3px;
-    transition: all 1s;
+.c.ng-leave {
+  opacity: 1;
+  transform: translateY(0%) rotateX(0deg);
+  box-shadow: 0px 0px 3px;
+  transition: all 1s;
 }
-.c.ng-leave-active{
-    transform: translateY(50%) rotateX(-90deg);
-    box-shadow: 0px 0px;
-    opacity: 0;
+.c.ng-leave-active {
+  transform: translateY(50%) rotateX(-90deg);
+  box-shadow: 0px 0px;
+  opacity: 0;
 }
 
 /*NG-animate End*/
