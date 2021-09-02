@@ -58,12 +58,13 @@ app.controller("appCtrl",function ($rootScope,$scope,$timeout,$interval) {
 app.controller("storeCtrl",function ($rootScope,$scope,$mdDialog,$mdToast,$timeout) {
     $rootScope.phones=[
 
-        {name:"Iphone 4s",img:'img/phones/ip3.png',price:250,company:"Iphone"},
+        {name:"Iphone 4s",img:'img/phones/ip3.jpg',price:250,company:"Iphone"},
         {name:"Galaxy A30" ,img:'img/phones/sm2.jpg',price:450,company:"Samsung"},
         {name:"Galaxy ZFold",img:'img/phones/sm3.jpg',price:900,company:"Samsung"},
         {name:"Nova Tab",img:'img/phones/huawei1.jpg',price:410,company:"Huawei"},
         {name:"J7 Pro" ,img:'img/phones/j7 pro.jpg',price:900,company:"Samsung"},
         {name:"P40",img:'img/phones/huawei2.jpg',price:325,company:"Huawei"},
+        {name:"P40",img:'img/phones/huwaei3.jpg',price:327,company:"Huawei"},
         {name:"Galaxy A51",img:'img/phones/sm6.jpg',price:995,company:"Samsung"},
         {name:"Nova 3e",img:'img/phones/huawei4.jpg',price:520,company:"Huawei"},
         {name:"Galaxy S10",img:'img/phones/s10.jpg',price:750,company:"Samsung"},
@@ -103,7 +104,6 @@ app.controller("storeCtrl",function ($rootScope,$scope,$mdDialog,$mdToast,$timeo
         {name:"Toshiba 5",img:'img/laptops/toshipa5.jpg',price:500,company:"Toshiba"},
         {name:"Toshiba 6",img:'img/laptops/toshipa6.jpg',price:700,company:"Toshiba"},
         {name:"Toshiba 7",img:'img/laptops/toshipa7.jpg',price:540,company:"Toshiba"},
-        {name:"Acer 6",img:'img/laptops/ace6.jpg',price:740,company:"Acer"},
 
         {name:"Toshiba 8",img:'img/laptops/toshipa8.jpg',price:490,company:"Toshiba"},
         {name:"Acer 1",img:'img/laptops/ace1.jpg',price:490,company:"Acer"},
